@@ -1,0 +1,43 @@
+//  -------------------------------------------------------- //
+//  Typography
+//  -------------------------------------------------------- //
+/* stylelint-disable */
+
+$stylekit-typography-font-stacks: $font-stacks !default;
+$stylekit-typography-font-scales: $font-scales !default;
+
+@function font-stack($key) {
+	@if type-of(map-get($font-stacks, $key)) == string {
+		@debug $font-stacks;
+		@debug $key;
+		@return unquote(map-get($font-stacks, $key));
+	} @else {
+		@error "font-stack '#{$key}' is not defined";
+	}
+}
+
+@function font-scale($stack, $index) {
+	@return map-get(map-get($stylekit-typography-font-scales, $stack), $index);
+}
+
+@mixin fs($stack, $index, $size-only: false) {
+	@if $size-only == false {
+		font-family: font-stack($stack);
+	}
+
+	font-size: font-scale($stack, $index);
+}
+
+@mixin getFont($stack) {
+	font-family: font-stack($stack);
+}
+
+@mixin font-scale-classes($scales: $stylekit-typography-font-scales, $prefix: "u-font-scale-") {
+	@each $name, $scale in $scales {
+		@each $key, $value in $scale {
+			.#{unquote($prefix + $name + '-' + $key)} {
+				font-size: $value;
+			}
+		}
+	}
+}

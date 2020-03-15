@@ -1,0 +1,82 @@
+section {
+	&.accordion-block {
+		margin-bottom: 5px;
+		&.open {
+			h3 {
+				color:get_color(brand, light_blue);
+			}
+		}
+		h3 {
+			@include fs(body, 2);
+			color:get_color(brand, dark_blue);
+			font-weight: 500;
+			line-height: 24px;
+			text-transform: uppercase;
+			margin-bottom:0;
+			cursor: pointer;
+			transition: 0.4s;
+			@include mq($from: medium) {
+				@include fs(body, 2);
+			}
+			.icon-play3 {
+				display:inline-block!important;
+				color:get_color(brand, light_blue);
+				margin-right: 5px;
+				-webkit-transition: .4s ease-out;
+				-moz-transition:  .4s ease-out;
+				transition:  .4s ease-out;
+				&.rotate {
+					-webkit-transform: rotate(90deg);
+					-moz-transform: rotate(90deg);
+					transform: rotate(90deg);
+				}
+			}
+
+
+		}
+		.reveal {
+			max-height: 0;
+			overflow: hidden;
+			transition: max-height 0.5s ease-out;
+			padding-left: 25px;
+		}
+	}
+	&.contact-block {
+		p, a {
+			@include fs(body, 2);
+			font-weight: 500;
+			line-height: 30px;
+			overflow-wrap: break-word;
+			letter-spacing: 1px;
+			margin-bottom: 0;
+			box-shadow: none;
+			color: #444444;
+			span {
+				color: get_color(brand, light_blue);
+			}
+			&.office-location {
+				text-transform: uppercase;
+				color: #000000;
+			}
+			&:hover {
+				box-shadow: none;
+			}
+
+		}
+
+	}
+	&.registration-details-block {
+		p{
+			padding: 0;
+			margin: 0;
+			font-size:12px !important;
+			line-height: 14px;
+			text-decoration: none!important;
+			&.company-name {
+				font-weight: 500;
+
+			}
+		}
+
+	}
+}

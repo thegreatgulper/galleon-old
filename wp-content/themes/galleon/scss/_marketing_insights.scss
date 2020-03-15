@@ -1,0 +1,96 @@
+
+//.page-template-single-insights {
+	.insights-wrapper{
+		@include mq($from: medium){
+			max-width: 750px;
+			flex-wrap: wrap;
+		}
+		@include mq($until: medium) {
+			flex-direction: column;
+		}
+		padding-left: 20px;
+		padding-top: 20px;
+		padding-right: 20px;
+		display: flex;
+		//justify-content: space-between;
+		.the_item{
+
+			margin-bottom: 20px;
+			display: flex;
+			flex-direction: column;
+			flex-basis: 32%;
+			@include mq($from: medium) {
+				margin-right: 9px;
+			}
+			.image {
+
+			}
+			.description{
+				h2 {
+					color: get-color(brand, light_blue);
+					text-transform: uppercase;
+					@include fs(body, 5);
+					font-weight: 600;
+					line-height: 21px;
+					margin: 5px 0 5px 0;
+				}
+				@include mq($until: medium) {
+					p {
+						@include fs(body, 1);
+					}
+
+				}
+				color: get-color(brand, dark_blue);
+
+				@include fs(body, 1);
+
+				.more-link {
+					text-transform: uppercase;
+					color: get_color(brand, light_blue);
+				}
+
+
+			}
+		}
+	}
+//}
+.single-marketing_insights {
+	.menu {
+		ul {
+			li#menu-item-23 {
+				a{
+					color: #6FB9D9!important;
+				}
+			}
+		}
+	}
+}
+
+.single-marketing_insights {
+	.other-posts {
+		h2.other-posts-title {
+			text-transform: uppercase;
+			font-weight: 600;
+			color: #192933;
+			font-family: "Barlow Condensed",sans-serif;
+			font-size: 25px;
+			margin-bottom: 10px;
+			border-bottom: 2px solid #6FB9D9;
+			flex-basis: 100%;
+			line-height: 45px;
+		}
+		@extend .insights-wrapper;
+		justify-content: flex-start;
+		.the_item {
+			//margin-right: 9px;
+			.description {
+				h2 {
+					a {
+						@extend h2;
+					}
+				}
+			}
+		}
+
+	}
+}

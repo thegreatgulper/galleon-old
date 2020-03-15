@@ -1,0 +1,14 @@
+//  -------------------------------------------------------- //
+//  Colour
+//  -------------------------------------------------------- //
+/*  stylelint-disable */
+
+$stylekit-color-map: $colors !default;
+$stylekit-color-default-tone: 'base' !default;
+
+/**
+ * Get color from palette w/default tone
+ */
+@function get-color($palette, $tone: $stylekit-color-default-tone) {
+	@return map-get(map-get($stylekit-color-map, $palette), $tone);
+}

@@ -1,0 +1,88 @@
+.site-nav {
+	@include mq($from: medium) {
+		margin-top: 52px;
+	}
+	.menu {
+		display: flex;
+		@include mq($until: medium) {
+			display: none;
+			&.visible {
+				display: flex;
+			}
+
+			justify-content: center;
+			align-items:center;
+			position: fixed;
+			height: 100vh;
+			width: 100vw;
+			left: 0;
+			top:0;
+			background:get_color(brand, white);
+			z-index: 3;
+		}
+		padding:0 10px 0 0;
+		ul {
+			@include mq($from: medium) {
+				display: flex;
+				flex-wrap: wrap;
+				margin-bottom: 50px;
+			}
+			@include mq($until: medium) {
+				height: 97vh;
+				width: 99%;
+				text-align: left;
+				padding-top: 100px;
+				border-bottom: 5px solid;
+				border-color: #6FB9D9;
+
+				padding-left: 30px;
+				background: #FAFAFA;
+				border-bottom: 5px solid;
+				border-color: get-color(brand, light_blue);
+
+			}
+
+			li {
+				flex: 1 1 100%;
+				margin-bottom: 22px;
+				@include mq($from: medium) {
+					margin-bottom: 0;
+				}
+
+				&.current-menu-item {
+					a {
+						color: get-color(brand, light_blue);
+					}
+				}
+
+				a {
+					color: get-color(brand, dark_blue);
+					text-transform: uppercase;
+					font-weight: 600;
+					@include fs(body, 6);
+					line-height: 32px;
+					@include mq($from: medium) {
+						font-weight: 400;
+						color: get-color(brand, white);
+						font-size: 19px;
+						line-height: 40px;
+						letter-spacing: 0px;
+					}
+					&:hover {
+						color: get-color(brand, light_blue);
+					}
+				}
+
+
+			}
+
+		}
+		&.mobil-visible {
+			//position: fixed;
+			//height:100vh;
+			//background:get_color(brand, white);
+		}
+
+	}
+
+}

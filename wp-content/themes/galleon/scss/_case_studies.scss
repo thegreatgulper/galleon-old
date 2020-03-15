@@ -1,0 +1,224 @@
+//fix for slider getting out of hand owning to flexbox dims inherit
+*{
+	min-height: 0;
+	min-width: 0;
+}
+.page-template-single-case-studies,
+.page-template-single-insights {
+	.page-content {
+		background-color: rgba(256,256,256, 0.9);
+	}
+	section:not(.achievement) {
+		padding-left: 20px;
+		padding-right: 20px;
+		@include mq($from: medium){
+			max-width: 750px;
+		}
+
+		.post-wrapper {
+			margin-top: 40px;
+
+			@include mq($from:medium) {
+				margin-top: 80px;
+				padding-right: 0;
+
+			}
+
+		}
+		.entry-header {
+			border-bottom: 1px solid;
+			border-color: get-color(brand, dark_blue);
+			padding-left: 0;
+			margin-bottom: 20px;
+
+			.entry-title {
+				text-transform: uppercase;
+				font-weight: 600;
+				color: get-color(brand, dark_blue);
+				@include fs(body, 8);
+				margin-bottom: 10px;
+			}
+		}
+		.entry-content {
+			padding-left: 0;
+			padding-right: 0;
+			position: sticky;
+			.note {
+				position: absolute;
+				right:0;
+				top: -55px;
+				@include fs(body,2 );
+				color: get-color(brand, dark_blue);
+				@include mq($until: medium) {
+					right:0px;
+					top: -60px;
+				}
+			}
+			.entry {
+				display: flex;
+
+				justify-content: space-between;
+				flex-wrap: wrap;
+				@include mq($from:medium) {
+					flex-wrap: wrap;
+				}
+				.achievement {
+					color: get-color(brand, white);
+					background-color: get-color(brand, light_blue);
+					flex: 1 1 45%;
+
+					@include mq($until: medium) {
+						margin-bottom: 20px;
+						padding-top: 20px;
+						padding-left: 10px;
+						padding-right: 10px;
+						&:nth-child(odd) {
+							margin-right: 20px;
+
+						}
+						p{
+							font-size: 20px;
+							font-weight: 400;
+							text-align: center;
+							margin-bottom: 15px;
+							padding-right: 10px;
+							padding-left: 10px;
+							&:nth-child(1) {
+								font-size: 40px;
+								font-weight: 600;
+							}
+						}
+					}
+
+					@include mq($from:medium) {
+						color: get-color(brand, light_blue);
+						background-color: transparent;
+						flex: 1 1 24%;
+
+						p{
+							font-size: 19px;
+							font-weight: 400;
+							line-height: 23px;
+							margin-bottom: 15px;
+							padding: 0 26px;
+							&:nth-child(1) {
+								font-size: 50px;
+								font-weight: 600;
+								margin-bottom: 20px;
+							}
+							text-align: center;
+						}
+					}
+				}
+			}
+		}
+	}
+	.case_study-wrapper {
+		@include mq($from: medium){
+			max-width: 750px;
+			padding-right: 30px;
+		}
+		padding-left: 20px;
+		padding-top: 20px;
+		padding-right: 20px;
+
+
+		.the_case {
+			margin-bottom: 20px;
+			display: flex;
+			background-color: #192933;
+			padding:1em;
+			position: relative;
+
+			//.description {
+				@include mq($until: medium) {
+					flex-direction: column;
+					position: relative;
+					.image{
+						order:1;
+						//width:100%!important;
+					}
+					.details {
+						order: 2;
+						width: 100%;
+						bottom: 5px;
+						h2 {
+							margin-bottom: 0;
+						}
+
+					}
+				}
+			//}
+
+			.details,
+			.image {
+				flex: 1 1 50%;
+				margin-bottom: -5px;
+			}
+			.image {
+				@include mq($from: medium) {
+					width: 350px;
+					object-fit: fill
+				}
+			}
+			.details {
+				padding:0 0 1em 0;
+				color: get-color(brand, white);
+				@include mq($until: medium) {
+					min-height: 55px;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					margin-top: 10px;
+				}
+				//background-color: get-color(brand, dark_blue);
+				h2 {
+					color: get-color(brand, light_blue);
+					@include fs(body, 5);
+					font-weight: 600;
+					letter-spacing: 1px;
+					margin-bottom: 10px;
+					text-transform: uppercase;
+					@include mq($until: medium) {
+						font-weight: 600;
+						@include fs(body, 3);
+						margin-bottom: 0;
+					}
+
+				}
+				ul {
+					margin-top: 10px;
+					list-style: disc inside;
+					li {
+						padding-left: 1px;
+					}
+				}
+				.value-case {
+					color: get-color(brand, white);
+					@include fs(body, 1);
+					font-weight: 500;
+					text-transform: uppercase;
+					@include mq($from: medium) {
+						display: none;
+					}
+				}
+			}
+			.image {
+				img {
+					height: 100%;
+					width: 100%;
+				}
+			}
+		}
+
+	}
+
+}
+.page-template-single-case-studies {
+	.parent {
+		.bg {
+			opacity:.1;
+		}
+	}
+}
+

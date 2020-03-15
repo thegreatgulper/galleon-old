@@ -1,0 +1,41 @@
+.logo-nav {
+	box-sizing: border-box;
+	padding: 20px 0 20px 20px;
+	.ln {
+		.site-logo {
+			width: 380px;
+			height: auto;
+			margin-top: 5px;
+			@include mq($from: medium){
+				width:200px;
+				margin-top: 39px;
+			}
+			img {
+				max-width: 100%;
+			}
+		}
+		.site-nav {
+			position: relative;
+			width: 100%;
+			&__toggle {
+				z-index: 4;
+				.btn--menu {
+					background: none;
+					border: none;
+					@include fs(body, 7);
+					cursor: pointer;
+					span {
+						color: get_color(brand, light_blue);
+					}
+				}
+				position: absolute;
+				top:20px;
+				right:15px;
+				@include mq ($from: medium) {
+					display: none;
+				}
+			}
+
+		}
+	}
+}

@@ -1,0 +1,44 @@
+.process {
+
+	.opw-widget-area {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-self: center;
+		color: white;
+		.opw-widget {
+			width: 60%;
+			text-align: center;
+			border: 1px solid #6FB9D9;
+			width: 375px;
+			padding: 10px 0 15px;
+			margin-bottom: 50px;
+			cursor: pointer;
+			position: relative;
+			&:hover {
+				background-color: #6FB9D9;
+			}
+			&.open {
+				background-color: #6FB9D9;
+			}
+			h2 {
+				color: white;
+				font-size: 30px;
+				font-weight: 400;
+				text-transform: uppercase;
+			}
+			.textwidget {
+				border-right: 1px solid #6FB9D9;
+				height: 101%;
+				width: 50%;
+				position: absolute;
+				bottom: -50px;
+			}
+		}
+		.opw-widget:last-child {
+			.textwidget {
+				border-right: none;
+			}
+		}
+	}
+}

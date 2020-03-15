@@ -1,0 +1,89 @@
+.page-template-single-simple,
+.single-marketing_insights {
+	background-color: white;
+	section {
+		padding-left: 20px;
+		padding-right: 30px;
+		@include mq($from: medium){
+			max-width: 750px;
+		}
+
+		.post-wrapper {
+			margin-top: 40px;
+
+			@include mq($from:medium) {
+				margin-top: 85px;
+				padding-right: 0;
+
+			}
+
+			.entry-header {
+				padding-left: 0;
+				margin-bottom: 20px;
+
+				.entry-title {
+					text-transform: uppercase;
+					font-weight: 600;
+					color: get-color(brand, dark_blue);
+					@include fs(body, 8);
+					margin-bottom: 10px;
+				}
+			}
+			.image {
+				margin-bottom: 20px;
+			}
+
+			.entry-content-simple {
+				.entry {
+					p {
+						@include fs(body, 2);
+						@include mq($until:medium) {
+							@include fs(body, 1);
+						}
+						color: get-color(brand, dark_blue);
+						font-weight: 300;
+						line-height: 24px;
+
+						&:first-child {
+							color: get-color(brand, light_blue);
+							font-weight: 500;
+						}
+					}
+				}
+			}
+
+		}
+	}
+}
+.page-template-single-insights {
+	.parent {
+		.page-content {
+			.loadmore {
+				margin-top: 20px;
+				margin-bottom: 20px;
+				max-width: 750px;
+				display: flex;
+				justify-content: center;
+
+				button {
+					background: 0 0;
+					border-radius: 0;
+					border: 1px solid #6FB9D9;
+					color: #6FB9D9;
+					box-shadow: none;
+					line-height: 22px;
+					padding: 5px 40px;
+					text-transform: uppercase;
+					font-weight: 500;
+					font-size: 20px;
+					&:hover {
+						color: #fff;
+						background-color: #6FB9D9;
+					}
+
+				}
+			}
+		}
+
+	}
+}

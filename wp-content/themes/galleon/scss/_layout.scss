@@ -1,0 +1,341 @@
+* {
+	box-sizing: border-box;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+//feedback
+.entry-content p {
+	line-height: 24px;
+}
+
+.hidden {
+	//display: none;
+}
+//xsmall: 21em,
+//small: 30em,
+//small-major: 40em,
+//medium: 50em,
+//medium-major: 62.5em,
+//large: 75em,
+//xlarge: 90em
+#bg {
+	.page-id-16 & {
+		top: 0 !important;
+	}
+	display: block;
+	position: fixed;
+	top: 0;
+	overflow: hidden;
+	z-index: -999;
+	//height: 120%; this is for ipad pro
+	//width: 120%;
+	//height: 100%;
+	width: 100%;
+	height: 100%;
+	//width: 100vw;
+	/* text-align: right; */
+		@include mq ($until: medium) {
+			display:none;
+		}
+	img {
+		width:100%;
+	}
+}
+#bg {
+	div {
+		height: 100%;
+		width: 100vw;
+		img{
+			height: 100%;
+			width: 100vw;
+			object-fit: cover;
+		}
+	}
+}
+
+.overlay {
+	position: fixed;
+	top:0;
+	left:0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	text-align: -moz-center;
+	text-align: -webkit-center;
+	.wrapper {
+		position: relative;
+		width:600px;
+		background-color: get-color(brand, light_blue);
+		color:white;
+		.btn--menu {
+			background: 0 0;
+			border: none;
+			font-family: "Barlow Condensed",sans-serif;
+			font-size: 28px;
+			cursor: pointer;
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			z-index: 100;
+			color:white;
+		}
+	}
+}
+
+.page-template-single-case-studies {
+	#bg {
+		opacity:0.8;
+	}
+}
+.page-template-single-insights {
+	#bg {
+		opacity:0.5;
+	}
+}
+.page-template-single-insights {
+	.post-wrapper {
+		position: relative;
+		.entry-header{
+			.newsletter-popup {
+				button {
+					position: absolute;
+					right: 0;
+					top: 5px;
+					color: white;
+					background: 0 0;
+					border-radius: 0;
+					border: 1px solid #6FB9D9;
+					background-color: #6FB9D9;
+					box-shadow: none;
+					line-height: 22px;
+					padding: 2px 30px;
+					text-transform: uppercase;
+					font-weight: 500;
+					font-size: 18px;
+					cursor: pointer;
+				}
+
+			}
+		}
+	}
+}
+
+body:not(.wp-admin) {
+	@include getFont(body);
+}
+body.preventScroll {
+	overflow: hidden;
+}
+.hidden{
+	display: none;
+}
+.entry-header {
+	max-width: none;
+}
+@include mq-show-breakpoints();
+
+.parent {
+	height:100%;
+	flex: 1;
+	display: flex;
+	flex-wrap: wrap;
+	@include mq($from: medium) {
+		flex-wrap: nowrap;
+	}
+	.logo-nav {
+		box-sizing: border-box;
+		background-color: get-color(brand, dark_blue);
+		border-bottom: 3px solid;
+		border-color: get_color(brand, light_blue);
+		width: 100vw;
+		.ln {
+			display: flex;
+			justify-content: space-between;
+			@include mq($from: medium) {
+				flex-direction: column;
+			}
+		}
+
+		@include mq($from: medium) {
+			position: fixed;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			width: $col1;
+			min-height: 100vh;
+			z-index: 2;
+		}
+
+		.f-desktop {
+			@include mq($until: medium) {
+				display: none;
+			}
+		}
+	}
+	.page-content {
+
+		.page-template-single-our-process & {
+			display: flex;
+			@include mq($from: medium) {
+				background-color: get-color(brand, dark_blue);
+			}
+			.process {
+				width: calc(100% - 350px);
+				height: 100vh;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: get-color(brand, dark_blue);
+				@include mq($until: medium) {
+					display: none;
+				}
+			}
+
+		}
+
+		background-size:100% 260px !important;
+		@include mq($from: medium) {
+			padding-left: $col1;
+			background-size: 100% 100% !important;
+			width: 100%;
+			min-height: 100vh;
+		}
+		.slide-in {
+			width: 100%;
+			background: rgba(255, 255, 255, 0);
+			@include mq($from: medium) {
+				width: $slideIn;
+				background: rgba(255, 255, 255, .95);
+				//height: 100%;
+				min-height:100vh;
+				z-index: 1;
+				position:relative;
+				left:-350px;
+				&.show {
+					transition: transform 1.5s 0s;
+					transform: translateX(350px);
+				}
+			}
+
+			header {
+				@include mq($from: medium) {
+					padding:20px 20px 10px 20px;
+				}
+
+				//background-color: rgba(111, 185, 217, 1);
+				background-size: cover;
+				background-position: 0px 20%;
+
+				@include mq ($from: medium) {
+					background-image: none!important;
+				}
+				h1 {
+					color: get_color(brand, white);
+					@include fs(body, 8);
+					font-weight: 600;
+					letter-spacing: 1px;
+					line-height: 28px;
+					align-self: center;
+					margin: 0;
+					text-transform: uppercase;
+					// this need some love: padding-right: 23px;
+
+					@include mq($until: medium) {
+						@include fs(body, 5);
+						line-height: 24px;
+					}
+
+				}
+				display: flex;
+				&.entry-header{
+					display: flex;
+					align-items: flex-end;
+					min-height: 250px;
+					position: inherit;
+					max-width: none;
+					overflow: hidden;
+					.h_wrapper {
+
+						display: flex;
+						background-color: rgba(111, 185, 217, .9);
+						width: 100%;
+						@include mq($until: medium) {
+							position: relative;
+							bottom: -100px;
+							min-height: 75px;
+							padding: 10px;
+							padding-left: 20px;
+							&.show {
+								transition: transform 1.5s 0s;
+								transform: translateY(-100px);
+							}
+							h1 {
+								.page-id-8 & {
+									width: 80%;
+								}
+								width: 60%;
+							}
+						}
+					}
+					@include mq ($from: medium)
+					{
+						margin-top: 120px;
+						min-height: 120px;
+						margin: 0;
+						background-color: get-color(brand, light_blue);
+					}
+				}
+			}
+			.entry-content {
+				padding:20px;
+				padding-top: 0;
+				@include mq($from: medium) {
+					padding: 52px $padding;
+					margin: 0;
+				}
+				.wp-block-button__link {
+					color:get-color(brand, light_blue);
+					background: none;
+					border-radius: 0;
+					border:1px solid;
+					border-color: get-color(brand, light_blue);
+					box-shadow:none;
+					line-height: 22px;
+					padding: 5px 40px;
+					text-transform: uppercase;
+					font-weight: 500;
+					&:active,
+					&:hover
+					{
+						color:get-color(brand, white);
+						background-color: get-color(brand, light_blue);
+					}
+				}
+
+				p{
+					@include fs(body,2);
+					@include mq($until: medium) {
+						@include fs(body,1);
+					}
+				}
+
+			}
+		}
+	}
+	.f-mobile {
+		width:100%;
+		padding:$gutter;
+		border-bottom: 3px solid;
+		border-color: get-color(brand, light_blue);
+		@include mq($from: medium) {
+			display: none;
+		}
+
+	}
+}

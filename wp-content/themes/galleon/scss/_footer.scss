@@ -1,0 +1,49 @@
+footer {
+	&#desktop
+	{
+		p, a {
+			color:get_color(brand, white);
+			@include fs(body,2);
+			font-weight:400;
+			line-height: 34px;
+			overflow-wrap: break-word;
+			span {
+				color: get_color(brand, light_blue);
+
+			}
+		}
+		.social {
+			margin-top: $gutter;
+			span {
+				@include fs(body, 5);
+				color: get_color(brand, lightest_blue);
+				margin-right: 10px;
+			}
+		}
+	}
+	&#mobile {
+		width: 100%;
+
+		p, a {
+			color: get_color(brand, dark_blue);
+			@include fs(body, 2);
+			font-weight: 400;
+			line-height: 38px;
+			overflow-wrap: break-word;
+			letter-spacing: 1px;
+			span {
+				color: get_color(brand, light_blue);
+
+			}
+		}
+		.social {
+			margin-top: $gutter;
+			span {
+				@include fs(body, 8);
+				color: get_color(brand, light_blue);
+				margin-right: 10px;
+			}
+		}
+	}
+
+}

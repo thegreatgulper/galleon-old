@@ -1,0 +1,87 @@
+//  -------------------------------------------------------- //
+//color:get_color(brand, green);
+//@include fs(body, 2);
+//@include mq($from:small, $until: medium) {
+//	color:get_color(brand, gray);
+//getFont(body);
+//}
+//  Variables
+//  -------------------------------------------------------- //
+$gutter: 20px;
+$padding:$gutter;
+$col1: 257px;
+$slideIn: 350px;
+$bodyMargin: 40px;
+
+//  -------------------------------------------------------- //
+//  Settings
+//  -------------------------------------------------------- //
+
+// Global settings
+$global-width-maximum: 1080px;
+$global-width-maximum-large: 1280px;
+$global-width-maximum-small: 960px;
+$global-gutter: 2%;
+$global-baseline: 16px;
+$global-offset: 2.25%;
+
+//  -------------------------------------------------------- //
+//  Breakpoints
+//  -------------------------------------------------------- //
+//  There are no common breakpoints so these are just a suggestion
+//  You'll need to define your own breakpoints to suit your design.
+//  @see https://github.com/sass-mq/sass-mq for usage notes.
+
+
+$mq-breakpoints: (
+		xsmall: 21em,
+		small: 30em,
+		small-major: 40em,
+		medium: 50em,
+		medium-major: 62.5em,
+		large: 75em,
+		xlarge: 90em
+);
+// Shows breakpoints without inspector - dev mode only
+//$mq-show-breakpoints: (xsmall, small, small-major, medium, medium-major, large, xlarge  );
+
+//  -------------------------------------------------------- //
+//  Colours
+//  -------------------------------------------------------- //
+
+$colors: (
+		brand: (
+				dark_blue: #192933,
+				light_blue: #6FB9D9,
+				lightest_blue: #C9EFFF,
+				white: #fff,
+		)
+);
+
+//  -------------------------------------------------------- //
+//  Font Stacks
+//  -------------------------------------------------------- //
+
+$fallback-font-stack: sans-serif;
+
+$font-stacks: (
+		body: '"Barlow Condensed", sans-serif'
+);
+
+// Keys should match those in $font-stacks
+$font-scales: (
+		body: (
+				0: 12px,
+				1: 16px,
+				2: 18px,
+				3: 20px,
+				4: 22px,
+				5: 24px,
+				6: 26px,
+				7: 28px,
+				8: 30px,
+				9: 32px,
+				10:34px
+		),
+
+);

@@ -1,0 +1,48 @@
+.page-template-single-other-simple {
+	background-color: white;
+	section {
+		padding-left: 20px;
+		padding-right: 30px;
+		@include mq($from: medium){
+			max-width: 750px;
+		}
+
+		.post-wrapper {
+			margin-top: 40px;
+
+			@include mq($from:medium) {
+				margin-top: 85px;
+				padding-right: 0;
+
+			}
+
+			.entry-header {
+				padding-left: 0;
+				margin-bottom: 20px;
+
+				.entry-title {
+					text-transform: uppercase;
+					font-weight: 600;
+					color: get-color(brand, dark_blue);
+					@include fs(body, 8);
+					margin-bottom: 10px;
+				}
+			}
+			.image {
+				margin-bottom: 20px;
+			}
+
+			.entry-content-simple {
+				.entry {
+					p {
+						@include fs(body, 2);
+						color: get-color(brand, dark_blue);
+						font-weight: 300;
+						line-height: 24px;
+					}
+				}
+			}
+
+		}
+	}
+}
