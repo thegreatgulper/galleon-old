@@ -33,4 +33,5 @@ wp-signup.php
 wp-trackback.php
 xmlrpc.php
 urllist.txt
+.htaccess
 wp-content/themes/galleon-old/node_modules
