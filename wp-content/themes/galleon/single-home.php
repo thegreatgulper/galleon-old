@@ -44,7 +44,7 @@ $testimonials = new WP_Query( $args );
 
                         <header class="entry-header group" style="background-image: url(<?php echo $image ?>);">
                             <div class="h_wrapper">
-                                <h1 class="entry-title"><?php the_title(); ?> - test</h1>
+                                <h1 class="entry-title"><?php the_title(); ?></h1>
                             </div>
                         </header>
 
